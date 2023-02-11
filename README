@@ -1,0 +1,33 @@
+# test api for node express app 2021
+# npm start opens on localhost 3000
+
+# npm install shows 1 critical warning, 
+# 21 vulnerabilities (7 moderate, 13 high, 1 critical)
+
+#---------------#
+ npm audit fix
+
+~/repos/node/bldAppsNodeExp2021/nodeExp21spkrAPI01 $
+~/repos/node/bldAppsNodeExp2021/nodeExp21spkrAPI01 $npm audit fix
+npm WARN deprecated sequelize@5.22.5: Please update to v6 or higher!
+A migration guide can be found here: https://sequelize.org/v6/manual/upgrade-to-v6.html
+
+added 15 packages, removed 88 packages, changed 35 packages, and audited 134 packages in 19s
+
+# npm audit report
+
+qs  6.5.0 - 6.5.2
+Severity: high
+qs vulnerable to Prototype Pollution - https://github.com/advisories/GHSA-hrpp-h998-j3pp
+fix available via `npm audit fix --force`
+Will install express@4.18.2, which is outside the stated dependency range
+node_modules/qs
+  body-parser  1.18.0 - 1.18.3
+  Depends on vulnerable versions of qs
+  node_modules/express/node_modules/body-parser
+    express  4.15.4 - 4.16.4 || 5.0.0-alpha.1 - 5.0.0-alpha.7
+    Depends on vulnerable versions of body-parser
+    Depends on vulnerable versions of qs
+    node_modules/express
+
+3 high severity vulnerabilities remain qs, express, body-parser
